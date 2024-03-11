@@ -15,10 +15,11 @@ class PostService implements PostServiceInterface {
     protected $postRepository;
 
     public function __construct(PostRepositoryInterface $postRepository) {
-        
-        $this->postRepository = new PostCacheDecorator($postRepository);
+       
+        $this->postRepository = $postRepository;
     }
 
+    
     public function getAllPosts(): Collection
     {
         return  $this->postRepository->getAll();
