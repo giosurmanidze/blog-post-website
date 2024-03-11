@@ -27,7 +27,7 @@ class PostCacheDecorator implements PostRepositoryInterface
         return $this->repository->getById($id);
     }
     
-    public function store($request): JsonResponse
+    public function store($request): ?Post
     {
         return $this->repository->store($request);
     }

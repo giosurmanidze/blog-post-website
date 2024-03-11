@@ -34,7 +34,7 @@ class PostService implements PostServiceInterface {
     {
         return $this->postRepository->getRecent($limit);
     }
-    public function storePost($request): JsonResponse
+    public function storePost($request): ?Post
     {
         return $this->postRepository->store($request);
     }
