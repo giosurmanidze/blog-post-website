@@ -8,6 +8,7 @@ use App\Contracts\PostServiceInterface;
 use App\Decorators\PostCacheDecorator;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 
 class PostService implements PostServiceInterface {
 
@@ -31,5 +32,9 @@ class PostService implements PostServiceInterface {
     public function getRecentPosts($limit = 5): Collection
     {
         return $this->postRepository->getRecent($limit);
+    }
+    public function storePost(): JsonResponse
+    {
+        return $this->postRepository->store();
     }
 } 

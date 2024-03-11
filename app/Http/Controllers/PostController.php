@@ -32,4 +32,9 @@ class PostController extends Controller
         $recentPosts = $this->postService->getRecentPosts();
         return view('posts.showRecentPosts', compact('recentPosts'));
     }
+
+    public function store()
+    {
+        
+    }
 }

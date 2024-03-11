@@ -6,6 +6,7 @@ use App\Contracts\PostRepositoryInterface;
 use Illuminate\Support\Facades\Cache;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 
 class PostCacheDecorator implements PostRepositoryInterface
 {
@@ -24,6 +25,11 @@ class PostCacheDecorator implements PostRepositoryInterface
     public function getById($id): ?Post
     {
         return $this->repository->getById($id);
+    }
+    
+    public function store(): JsonResponse
+    {
+        return $this->repository->store();
     }
 
     public function getRecent($limit = 5): Collection
