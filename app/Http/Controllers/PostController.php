@@ -15,7 +15,6 @@ class PostController extends Controller
         $this->postService = $postService;        
     }
 
-    
     public function index()
     {
         $posts = $this->postService->getAllPosts();
@@ -26,5 +25,11 @@ class PostController extends Controller
     {
         $post = $this->postService->getPostById($id);
         return view('posts.show', compact('post'));
+    }
+
+    public function getRecentPosts()
+    {
+        $recentPosts = $this->postService->getRecentPosts();
+        return view('posts.showRecentPosts', compact('recentPosts'));
     }
 }

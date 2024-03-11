@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/recent-posts', [PostController::class, 'getRecentPosts'])->name('posts.getRecentPosts');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');

@@ -19,4 +19,9 @@ class PostRepository implements PostRepositoryInterface {
         return Post::findOrFail($id);
     }
 
+    public function getRecent($limit = 5): Collection
+    {
+        return Post::latest()->limit($limit)->get();
+    }
+
 }
