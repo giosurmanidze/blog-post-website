@@ -33,8 +33,9 @@ class PostController extends Controller
         return view('posts.showRecentPosts', compact('recentPosts'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        
+        $this->postService->storePost($request);
+        return response()->json("Post Added!");
     }
 }

@@ -12,5 +12,5 @@ interface PostServiceInterface {
     public function getAllPosts(): Collection;
     public function getPostById($id): ?Post;
     public function getRecentPosts($limit = 5): Collection;
-    public function storePost():JsonResponse;
+    public function storePost($request):JsonResponse;
 }

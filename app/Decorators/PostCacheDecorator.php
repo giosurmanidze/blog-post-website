@@ -27,9 +27,9 @@ class PostCacheDecorator implements PostRepositoryInterface
         return $this->repository->getById($id);
     }
     
-    public function store(): JsonResponse
+    public function store($request): JsonResponse
     {
-        return $this->repository->store();
+        return $this->repository->store($request);
     }
 
     public function getRecent($limit = 5): Collection

@@ -25,8 +25,13 @@ class PostRepository implements PostRepositoryInterface {
         return Post::with('comments')->latest()->limit($limit)->get();
     }
 
-    public function store(): JsonResponse
+    public function store($request): JsonResponse
     {
+        $post = Post::create([
+            'title' => $request['title'],
+            'content' => $request['content']
+        ]);
+
         return response()->json("Post Added!");
     }
 }
