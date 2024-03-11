@@ -11,7 +11,7 @@ class PostRepository implements PostRepositoryInterface {
 
     public function getAll(): Collection
     {
-        return Post::all();
+        return Post::with('comments')->get();
     }
 
     public function getById($id): ?Post
@@ -21,7 +21,7 @@ class PostRepository implements PostRepositoryInterface {
 
     public function getRecent($limit = 5): Collection
     {
-        return Post::latest()->limit($limit)->get();
+        return Post::with('comments')->latest()->limit($limit)->get();
     }
 
 }
