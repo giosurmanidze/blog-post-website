@@ -5,7 +5,6 @@ namespace App\Contracts;
 
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\JsonResponse;
 
 interface PostServiceInterface {
 

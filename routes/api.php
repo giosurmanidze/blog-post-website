@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,3 +20,6 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/recent-posts', [PostController::class, 'getRecentPosts'])->name('posts.getRecentPosts');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');

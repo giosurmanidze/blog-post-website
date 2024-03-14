@@ -2,10 +2,14 @@
 
 namespace App\Providers;
 
+use App\Contracts\CommentRepositoryInterface;
+use App\Contracts\CommentServiceInterface;
 use App\Contracts\PostRepositoryInterface;
 use App\Contracts\PostServiceInterface;
 use App\Decorators\PostCacheDecorator;
+use App\Repositories\CommentRepository;
 use App\Repositories\PostRepository;
+use App\Services\CommentService;
 use App\Services\PostService;
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
         });
         
         $this->app->bind(PostServiceInterface::class, PostService::class);
+        $this->app->bind(CommentRepositoryInterface::class,CommentRepository::class);
     }
     
 
