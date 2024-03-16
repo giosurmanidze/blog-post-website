@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = $this->postService->getAllPosts();
-        return response()->json($posts);
+        return view('posts.index', compact('posts'));
     }
 
     public function show($id)

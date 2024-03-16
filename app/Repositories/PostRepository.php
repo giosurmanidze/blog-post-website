@@ -11,7 +11,7 @@ class PostRepository implements PostRepositoryInterface {
 
     public function getAll(): Collection
     {
-        return Post::with('comments')->get();
+        return Post::withCount('comments')->get();
     }
 
     public function getById($id): ?Post
